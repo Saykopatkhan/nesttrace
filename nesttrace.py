@@ -1131,11 +1131,20 @@ async def run_trace(args: argparse.Namespace) -> None:
         args.headed = True
 
     async with async_playwright() as pw:
-        browser = await pw.chromium.launch(
-            headless=not args.headed,
-            args=["--disable-blink-features=AutomationControlled", "--no-sandbox",
-                   "--disable-dev-shm-usage", "--disable-infobars", "--window-size=1920,1080"],
-        )
+        launch_kwargs = {
+            "headless": not args.headed,
+            "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox",
+                     "--disable-dev-shm-usage", "--disable-infobars", "--window-size=1920,1080"]
+        }
+        
+        # Termux (Android) ortamı kontrolü
+        termux_chromium_path = "/data/data/com.termux/files/usr/bin/chromium-browser"
+        if os.path.exists(termux_chromium_path):
+            console.print("[dim]Termux (Android) ortamı tespit edildi, yerel Chromium kullanılıyor.[/]")
+            launch_kwargs["executable_path"] = termux_chromium_path
+
+        browser = await pw.chromium.launch(**launch_kwargs)
+        
         pool = ContextPool(
             browser, max_concurrent=args.concurrency,
             proxy_list=proxy_list, headed=args.headed,
