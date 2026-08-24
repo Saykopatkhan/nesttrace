@@ -1,8 +1,8 @@
 __pycache__/
 *.pyc
-*.json
-*.html
-*.md
+nesttrace_v5_*.json
+nesttrace_v5_*.html
+nesttrace_v5_*.md
 nesttrace_debug.log
 proxies.txt
 .env
