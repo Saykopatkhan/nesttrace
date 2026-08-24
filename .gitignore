@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.json
+*.html
+*.md
+nesttrace_debug.log
+proxies.txt
+.env
+.venv/
+venv/
+env/
