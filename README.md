@@ -27,6 +27,7 @@ Sosyal medya platformlarının giderek zorlaşan anti-bot sistemlerini (Cloudfla
 - 🔗 **Yapay Korelasyon:** Elde edilen verileri çaprazlayarak (aynı bio, aynı isim) hedefin diğer platformlardaki gizli hesaplarını açığa çıkarır.
 - 📊 **Çoklu Çıktı (Raporlama):** Analiz sonuçlarını **JSON**, **HTML** veya **Markdown** formatında, göz alıcı bir şekilde raporlar.
 - 🌍 **Proxy Desteği:** Hem CLI üzerinden hem de `.txt` dosyasından Residential/Datacenter proxy desteği sağlar.
+- 📱 **Çapraz Platform (Termux & Windows):** Android (Termux) ortamını otomatik algılayıp yerel Chromium çalıştırabilme özelliği ve Windows kullanıcıları için tek tıkla `.exe` oluşturan yapım betiği (`build_exe.bat`) barındırır.
 
 ## ⚙️ Kurulum (Installation)
 
@@ -38,6 +39,13 @@ cd nesttrace
 pip install -r requirements.txt
 python -m playwright install chromium
 ```
+
+**📱 Termux (Android) Kullanıcıları İçin Ek Adım:**
+Termux kullanıyorsanız Playwright tarayıcıları desteklemediği için sistem Chromium'unu kurmanız gerekir:
+```bash
+pkg install chromium
+```
+Araç Termux ortamında olduğunuzu otomatik algılayacak ve yerel Chromium'u kullanacaktır.
 
 ## 🚀 Kullanım (Usage)
 
@@ -65,6 +73,9 @@ python nesttrace.py saykopatkhan --proxy-file proxies.txt
 ```bash
 python nesttrace.py saykopatkhan --output html md
 ```
+
+**Windows İçin Tek Tıkla .exe Oluşturma:**
+Projeyi bir Windows bilgisayara indirdiğinizde, içindeki `build_exe.bat` dosyasına çift tıklayarak sistemi otomatik olarak kurabilir ve kendinize tek tıklamayla çalışabilen bir `NestTrace.exe` (dist/ klasörü içinde) oluşturabilirsiniz.
 
 ---
 
