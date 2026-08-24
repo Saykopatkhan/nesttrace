@@ -1,10 +1,10 @@
 <div align="center">
-  <h1>🕵️‍♂️ NestTrace v5.1</h1>
+  <h1>🕵️‍♂️ NestTrace v5.1 🇹🇷</h1>
   <p><strong>Field-Hardened Enterprise OSINT Framework</strong></p>
   
   [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Saykopatkhan/nesttrace/graphs/commit-activity)
+  [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/kullaniciadi/nesttrace/graphs/commit-activity)
   [![OSINT](https://img.shields.io/badge/Category-OSINT-red.svg)]()
 </div>
 
@@ -34,7 +34,7 @@ Sosyal medya platformlarının giderek zorlaşan anti-bot sistemlerini (Cloudfla
 Sisteminize kurmak için aşağıdaki adımları takip edin:
 
 ```bash
-git clone https://github.com/Saykopatkhan/nesttrace.git
+git clone https://github.com/kullaniciadi/nesttrace.git
 cd nesttrace
 pip install -r requirements.txt
 python -m playwright install chromium
@@ -53,25 +53,25 @@ Terminalden `nesttrace.py` dosyasını çalıştırarak hedef analizinizi başla
 
 **Temel Kullanım (Headless - Arka planda çalışır):**
 ```bash
-python nesttrace.py saykopatkhan
+python nesttrace.py hedef_kullanici
 ```
 
 **Görsel Arayüz Modu ve CAPTCHA Çözümü:**
 *(Tarayıcı ekranda açılır, CAPTCHA çıkarsa sizden çözmenizi bekler)*
 ```bash
-python nesttrace.py saykopatkhan --headed --solve-captcha
+python nesttrace.py hedef_kullanici --headed --solve-captcha
 ```
 
 **Proxy ile Kullanım:**
 ```bash
-python nesttrace.py saykopatkhan --proxy http://user:pass@host:port
+python nesttrace.py hedef_kullanici --proxy http://user:pass@host:port
 # veya bir listeden okutmak için:
-python nesttrace.py saykopatkhan --proxy-file proxies.txt
+python nesttrace.py hedef_kullanici --proxy-file proxies.txt
 ```
 
 **Sadece Belirli Formatlarda Çıktı Alma:**
 ```bash
-python nesttrace.py saykopatkhan --output html md
+python nesttrace.py hedef_kullanici --output html md
 ```
 
 **Windows İçin Tek Tıkla .exe Oluşturma:**
